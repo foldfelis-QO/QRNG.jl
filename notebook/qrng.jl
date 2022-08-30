@@ -28,6 +28,9 @@ begin
 	using BenchmarkTools
 end
 
+# ╔═╡ 1aa4f2a8-9a2e-44bd-9c15-728f59340588
+PlutoUI.Resource("https://static.vecteezy.com/system/resources/previews/000/543/077/large_2x/character-design-in-concept-of-quantum-computing-vector-illustration-about-future-technology-of-computer-system-for-web-banner-mascot-creator-cover-and-template.jpg")
+
 # ╔═╡ 085b1a90-2826-11ed-1dd8-47d61cb339a8
 md"
 # QRNG
@@ -78,6 +81,7 @@ BenchmarkTools.Trial: 10000 samples with 8 evaluations.
 # ╔═╡ Cell order:
 # ╟─7f980eea-afb2-4acb-b2c6-6948cce81cc3
 # ╟─331c64cc-0a25-471d-89a0-f3551a3ef0f0
+# ╟─1aa4f2a8-9a2e-44bd-9c15-728f59340588
 # ╟─085b1a90-2826-11ed-1dd8-47d61cb339a8
 # ╠═031e74cd-dbc0-4f04-8a04-29f475e8fc66
 # ╟─c7b82c6d-6319-4990-8bf7-4ec07a89d3aa
