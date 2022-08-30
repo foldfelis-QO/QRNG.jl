@@ -5,6 +5,9 @@ using QuantumStateBase
 using QuantumStateDistributions
 using GrayCode
 
+export VacuumNoiseSystem
+export Δt, ρ, var, x, y, yⁿ
+
 const DIM = 100
 
 struct VacuumNoiseSystem{G<:Gray, D<:GaussianStateBHD, T<:Real}
