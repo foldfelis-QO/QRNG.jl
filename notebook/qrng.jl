@@ -48,6 +48,9 @@ md"
 # ╔═╡ d84371c4-6f30-4d8e-b199-eaf00f3fe14f
 systemᵥ = VacuumNoiseSystem{Gray8}(0.9);
 
+# ╔═╡ 6dfcf9d2-91f0-4e3a-ac4b-322dd8b7fe19
+var(systemᵥ)
+
 # ╔═╡ d41a742e-0e47-4dd1-a5c6-f21630ece56b
 @bind 🚀 Button("Generate a quantum random number")
 
@@ -78,6 +81,13 @@ BenchmarkTools.Trial: 10000 samples with 8 evaluations.
 ```
 """
 
+# ╔═╡ c294d26e-8f51-4a37-9d54-7a5f03376031
+md"
+## Experiment
+
+Vacuum noise data from Yi-Ru
+"
+
 # ╔═╡ Cell order:
 # ╟─7f980eea-afb2-4acb-b2c6-6948cce81cc3
 # ╟─331c64cc-0a25-471d-89a0-f3551a3ef0f0
@@ -86,7 +96,9 @@ BenchmarkTools.Trial: 10000 samples with 8 evaluations.
 # ╠═031e74cd-dbc0-4f04-8a04-29f475e8fc66
 # ╟─c7b82c6d-6319-4990-8bf7-4ec07a89d3aa
 # ╠═d84371c4-6f30-4d8e-b199-eaf00f3fe14f
+# ╠═6dfcf9d2-91f0-4e3a-ac4b-322dd8b7fe19
 # ╠═83efc954-8529-44d9-9044-d1b81609733a
 # ╟─d41a742e-0e47-4dd1-a5c6-f21630ece56b
 # ╟─7cdf8362-2798-4602-943f-cd318eb7ba56
 # ╟─e866e544-e0a0-4ec5-abd6-a36b6f468a5c
+# ╟─c294d26e-8f51-4a37-9d54-7a5f03376031
