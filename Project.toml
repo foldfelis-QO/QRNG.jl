@@ -8,7 +8,9 @@ Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 GrayCode = "3c6b6a22-b11f-44c2-accc-f87d49953a21"
 QuantumStateBase = "73ce9c4f-35d1-4161-b9e6-26915895bfed"
 QuantumStateDistributions = "78ba9c6e-4c92-4abc-8d32-e9cb1304b8da"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
 julia = "1.6"
