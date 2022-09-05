@@ -4,13 +4,17 @@ using SpecialFunctions
 using QuantumStateBase
 using QuantumStateDistributions
 using GrayCode
-
-export VacuumNoiseSystem
-export Δt, ρ, var, x, y, yⁿ
+using Distributions
 
 const DIM = 100
 
-struct VacuumNoiseSystem{G<:Gray, D<:GaussianStateBHD, T<:Real}
+export QuantumNoiseSystem, VacuumNoiseSystem
+export fit
+export Δt, ρ, var, x, y, yⁿ
+
+abstract type QuantumNoiseSystem{G<:Gray} end
+
+struct VacuumNoiseSystem{G, D<:Distribution, T<:Real} <: QuantumNoiseSystem{G}
     Δt::T
     distribution::D
     var::T
@@ -20,11 +24,18 @@ function VacuumNoiseSystem{G}(Δt::T, dᵥ::D, varᵥ::T) where {G, D, T}
     return VacuumNoiseSystem{G, D, T}(Δt, dᵥ, varᵥ)
 end
 
-function VacuumNoiseSystem{G}(Δt) where {G<:Gray}
+function VacuumNoiseSystem{G}(; Δt) where {G}
     dᵥ = GaussianStateBHD(VacuumState(Matrix, dim=DIM))
     varᵥ = QuantumStateDistributions.var(dᵥ, zero(eltype(dᵥ)))
 
     return VacuumNoiseSystem{G}(Δt, dᵥ, varᵥ)
+end
+
+function fit(Sys::Type{<:VacuumNoiseSystem}, xs; Δt)
+    dᵥ = Distributions.fit(Normal, xs)
+    varᵥ = Distributions.var(dᵥ)
+
+    return Sys(Δt, dᵥ, varᵥ)
 end
 
 Δt(vns::VacuumNoiseSystem) = vns.Δt
@@ -33,7 +44,7 @@ end
 
 var(vns::VacuumNoiseSystem) = vns.var
 
-x(vns::VacuumNoiseSystem) = rand(vns.distribution)[2]
+x(vns::VacuumNoiseSystem) = last(rand(vns.distribution))
 
 y(x, var) = (1 + erf(x / √(2var))) / 2
 
