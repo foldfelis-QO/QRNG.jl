@@ -20,7 +20,8 @@ Distributions.sampler(d::ExpDistribution) = d
 Base.eltype(::ExpDistribution{T}) where {T} = eltype(T)
 
 function Base.rand(::AbstractRNG, d::ExpDistribution)
-    d.i += 1
+    # d.i = (d.i % length(d.data)) + 1
+    d.i = d.i ≥ length(d.data) ? 1 : d.i+1
 
     return d.data[d.i]
 end
