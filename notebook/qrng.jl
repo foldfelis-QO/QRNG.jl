@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.11
+# v0.19.9
 
 using Markdown
 using InteractiveUtils
@@ -126,7 +126,7 @@ Vacuum noise data from Yi-Ru
 # ╔═╡ a7f09540-fd08-4fa2-8d08-a64385b883eb
 df = CSV.read(
 	"../data/CF10M_LP2.5M(O2)_SR5M_BW20M(50ohm).Wfm.csv",
-	DataFrame, header=["θs", "xs"], delim=';'
+	DataFrame, header=["ts", "xs"], delim=';'
 )[1000:end, :]
 
 # ╔═╡ 48d6312d-e3d1-4b33-83e0-0e9ee01ba6b3
