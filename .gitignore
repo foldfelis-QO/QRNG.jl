@@ -28,4 +28,4 @@ Manifest.toml
 # Data
 data/*.csv
 data/*.png
-data/rn/*.txt
+data/rn/rn*.txt
