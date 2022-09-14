@@ -26,4 +26,6 @@ docs/site/
 Manifest.toml
 
 # Data
-data
+data/*.csv
+data/*.png
+data/*.txt
