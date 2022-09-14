@@ -1,8 +1,8 @@
 using CSV, DataFrames
 using GrayCode, QRNG
 
-const N_LINE = 2752
-const N_ONE_LINE = 1000
+const N_LINE = 275
+const N_ONE_LINE = 10000 # *8
 const FILE = joinpath(@__DIR__, "../data/CF10M_LP2.5M(O2)_SR5M_BW20M(50ohm).Wfm.csv")
 
 function gen_simulated_qrn()
