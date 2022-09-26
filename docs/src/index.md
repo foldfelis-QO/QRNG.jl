@@ -4,7 +4,7 @@ CurrentModule = QRNG
 
 # QRNG
 
-Documentation for [QRNG](https://github.com/foldfelis/QRNG.jl).
+Documentation for [QRNG](https://github.com/foldfelis-QO/QRNG.jl).
 
 ```@index
 ```
