@@ -47,7 +47,7 @@ y(x, var) = (1 + erf(x / √(2var))) / 2
 
 y(vns::VacuumNoiseSystem) = y(x(vns), var(vns))
 
-scale(y, nbits) = (2^nbits - 1) * y
+scale(y, nbits) = 2^nbits * y
 
 function is_forbiddened(y_scaled, Δt)
     y_int_part = floor(Unsigned, y_scaled)
