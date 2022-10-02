@@ -53,7 +53,7 @@ function is_forbiddened(y_scaled, Δt)
     y_int_part = floor(Unsigned, y_scaled)
     Δtₕ = Δt/2
 
-    return y_int_part - Δtₕ ≤ y_scaled ≤ y_int_part + Δtₕ
+    return (y_int_part + 1 - Δtₕ) < y_scaled && y_scaled < (y_int_part + Δtₕ)
 end
 
 function yⁿ(vns::VacuumNoiseSystem{G}) where {G}
