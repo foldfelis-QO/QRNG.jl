@@ -1,23 +1,9 @@
 name = "QRNG"
-uuid = "23bdfb87-5b57-480e-9fbe-562c8bb89eb4"
-authors = ["JingYu Ning <foldfelis@gmail.com> and contributors"]
+uuid = "ea3bfe15-25aa-4b77-8cb0-70b9bad8a33e"
+authors = ["JingYu Ning <115336923+jrunkening@users.noreply.github.com> and contributors"]
 version = "0.1.0"
 
-[deps]
-Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
-GrayCode = "3c6b6a22-b11f-44c2-accc-f87d49953a21"
-QuantumStateBase = "73ce9c4f-35d1-4161-b9e6-26915895bfed"
-QuantumStateDistributions = "78ba9c6e-4c92-4abc-8d32-e9cb1304b8da"
-Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
-SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
-Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
-
 [compat]
-Distributions = "0.25"
-GrayCode = "0.1"
-QuantumStateBase = "1.2"
-QuantumStateDistributions = "0.2"
-SpecialFunctions = "2.1"
 julia = "1.8"
 
 [extras]
