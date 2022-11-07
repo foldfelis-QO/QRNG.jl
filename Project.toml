@@ -3,6 +3,11 @@ uuid = "ea3bfe15-25aa-4b77-8cb0-70b9bad8a33e"
 authors = ["JingYu Ning <115336923+jrunkening@users.noreply.github.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+REPL = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
+Term = "22787eb5-b846-44ae-b979-8e399b8463ab"
+UnicodePlots = "b8865327-cd53-5732-bb35-84acbb429228"
+
 [compat]
 julia = "1.8"
 

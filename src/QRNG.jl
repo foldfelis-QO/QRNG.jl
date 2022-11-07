@@ -1,5 +1,7 @@
 module QRNG
 
-# Write your package code here.
+include("Generator/Generator.jl")
+include("UI/UI.jl")
+include("Detector/Detector.jl")
 
 end
