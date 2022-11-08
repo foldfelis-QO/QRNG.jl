@@ -20,7 +20,7 @@ get_res(detector::PseudoDetector) = detector.res
 
 function next(detector::PseudoDetector{T}) where {T}
     v_lim, Δv = detector.v_lim, detector.Δv
-    while !(-v_lim ≤ (signal = 2randn()) < v_lim) end
+    while !(-v_lim ≤ (signal = 3randn()) < v_lim) end
 
     return floor(T, (signal + v_lim) / Δv)
 end

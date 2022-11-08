@@ -1,7 +1,7 @@
 function min_entropy(signals::Vector, resolution::Integer)
     counts = zeros(resolution)
     for signal in signals
-        counts[signal] += 1
+        counts[signal+1] += 1
     end
 
     pmf = counts ./ length(signals)

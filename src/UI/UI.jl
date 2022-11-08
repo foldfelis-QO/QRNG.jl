@@ -1,3 +1,4 @@
+using Terming
 using Term
 using UnicodePlots
 
@@ -44,8 +45,8 @@ function gen_form(ui::UI)
 end
 
 function init(::UI)
-    alt_screen(true)
-    clear()
+    Terming.alt_screen(true)
+    Terming.clear()
 end
 
 function rander(ui::UI)
@@ -53,10 +54,10 @@ function rander(ui::UI)
 end
 
 function update(ui::UI)
-    clear()
+    Terming.cmove(0, 0)
     rander(ui)
 end
 
 function restore(::UI)
-    alt_screen(false)
+    Terming.alt_screen(false)
 end

@@ -15,11 +15,13 @@ function run()
     )
 
     init(generator.ui)
-    for _ in 1:1000
+    for _ in 1:100000
         gen_rn(generator)
         sleep(0.1)
     end
     restore(generator.ui)
+
+    return nothing
 end
 
 end
