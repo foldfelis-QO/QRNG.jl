@@ -3,18 +3,18 @@ using UnicodePlots
 
 include("utils.jl")
 
-struct UI<:AbstractUI
-    signals::Vector{Float64}
-    rns::Vector{Int64}
+struct UI{T}<:AbstractUI
+    signals::Vector{T}
+    rns::Vector{T}
     bit_rate::Int64
 end
 
-function UI()
-    return UI(randn(1000), rand(UInt8, 1000), 3)
+function UI(T, bit_rate)
+    return UI(T[0], T[0], bit_rate)
 end
 
 function gen_rn(rn; width)
-    Panel(
+    return Panel(
         "{red bold}$rn";
         title="Random Number", width=width, justify=:center
     )
@@ -28,8 +28,8 @@ function gen_chart(signals::Vector; nbins, title, width)
 end
 
 function gen_form(ui::UI)
-    base_width = 70
-    nbins = 15
+    base_width = 75
+    nbins = 22
 
     return Panel(
         gen_rn(bitstring(ui.rns[end])[(end-ui.bit_rate+1):end], width=2base_width) /
@@ -38,7 +38,7 @@ function gen_form(ui::UI)
             gen_chart(ui.rns, nbins=nbins, title="Random Numbers", width=base_width)
         );
 
-        title="Quantum Random Number Generator",
+        title="Quantum Random Number Generator (Bit Rate: $(ui.bit_rate))",
         fit=true, style="bold blue"
     )
 end
