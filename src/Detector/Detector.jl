@@ -1,3 +1,5 @@
+using CSV, DataFrames
+
 struct PseudoDetector{T}<:AbstrateDetector
     res_nbits::Int64
     res::Int64
@@ -30,6 +32,35 @@ function next(detector::PseudoDetector{T}, n::Integer) where {T}
     for i in 1:length(signals)
         signals[i] = next(detector)
     end
+
+    return signals
+end
+
+struct FileSourceDetector{T}<:AbstrateDetector
+    i::Vector{Int}
+    signals::Vector{T}
+end
+
+function FileSourceDetector(T, file::String)
+    signals = CSV.read(file, DataFrame, header=0)[!, 1]
+    signals = T.(signals .- typemin(signed(T)))
+
+    return FileSourceDetector{T}([0], signals)
+end
+
+get_res_nbits(::FileSourceDetector{T}) where {T} = length(bitstring(typemin(T)))
+
+get_res(detector::FileSourceDetector) = 2^get_res_nbits(detector)
+
+function next(detector::FileSourceDetector)
+    detector.i[1] += 1
+
+    return detector.signals[detector.i[1]]
+end
+
+function next(detector::FileSourceDetector, n::Int)
+    signals = detector.signals[(detector.i[1]+1):(detector.i[1]+n)]
+    detector.i[1] += n
 
     return signals
 end
