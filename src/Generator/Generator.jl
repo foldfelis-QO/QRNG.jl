@@ -48,3 +48,15 @@ function gen_rn(generator::Generator)
 
     update(generator.ui)
 end
+
+struct FileGenerator{D, E}
+    detector::D
+    encoder::E
+end
+
+function gen_rn(generator::FileGenerator)
+    signal = next(generator.detector)
+    rn = generator.encoder(signal)
+
+    return rn
+end
